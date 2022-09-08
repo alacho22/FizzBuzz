@@ -1,4 +1,4 @@
-def fizzbuz(max)
+def fizzbuz(max, rules)
   (1..max).each { |i|
 
     result = []
@@ -6,24 +6,24 @@ def fizzbuz(max)
     is_bong = i % 11 == 0
 
     if (not is_bong) && i % 3 == 0
-        result.append('Fizz')
+        result << 'Fizz'
         print_number = false
     end
 
     if i % 13 == 0
-      result.append('Fezz')
+      result << 'Fezz'
       print_number = false
     end
     if is_bong
-      result.append('Bong')
+      result << 'Bong'
       print_number = false
     else
       if i % 5 == 0
-        result.append('Buzz')
+        result << 'Buzz'
         print_number = false
       end
       if i % 7 == 0
-        result.append('Bang')
+        result << 'Bang'
         print_number = false
       end
     end
@@ -41,8 +41,17 @@ def fizzbuz(max)
 end
 
 def get_max
-  gets.to_i
+  Integer(gets) rescue false
 end
 
+def get_rules
+  ARGV.map { |arg| arg.to_i}
+end
+rules = get_rules
 max = get_max
-fizzbuz(max)
+if max
+  fizzbuz(max, rules)
+else
+  puts "Please input an integer"
+end
+
