@@ -1,20 +1,29 @@
 def fizzbuz
   (1..100).each { |i|
-    fizz_buzz_str = ''
-    fizz_or_buzz = false
-    if i % 3 == 0
-      fizz_buzz_str += 'Fizz'
-      fizz_or_buzz = true
-    end
-    if i % 5 == 0
-      fizz_buzz_str += 'Buzz'
-      fizz_or_buzz = true
-    end
-    if fizz_or_buzz
-      puts fizz_buzz_str
+    if i % 11 == 0
+      puts 'Bong'
     else
-      puts i
+      fizz_buzz_str = ''
+      fizz_buzz_or_bang = false
+      if i % 3 == 0
+        fizz_buzz_str += 'Fizz'
+        fizz_buzz_or_bang = true
+      end
+      if i % 5 == 0
+        fizz_buzz_str += 'Buzz'
+        fizz_buzz_or_bang = true
+      end
+      if i % 7 == 0
+        fizz_buzz_str += 'Bang'
+        fizz_buzz_or_bang = true
+      end
+      if fizz_buzz_or_bang
+        puts fizz_buzz_str
+      else
+        puts i
+      end
     end
+
   }
 end
 
