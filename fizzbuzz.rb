@@ -1,5 +1,5 @@
-def fizzbuz
-  (1..255).each { |i|
+def fizzbuz(max)
+  (1..max).each { |i|
 
     result = []
     print_number = true
@@ -40,4 +40,9 @@ def fizzbuz
   }
 end
 
-fizzbuz
+def get_max
+  gets.to_i
+end
+
+max = get_max
+fizzbuz(max)
